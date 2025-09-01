@@ -275,6 +275,11 @@ body {
     margin-left: auto;
 }
 
+.volume-wrapper:hover .volume-bar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .volume-bar {
     position: absolute;
     bottom: 40px;
@@ -560,12 +565,12 @@ body {
     }
 }
 
-.random svg{
-    width: 60px; 
+.random svg {
+    width: 60px;
     height: 60px;
     color: white;
 }
 
 .random.active svg {
-  color: #1DB954;
+    color: #1DB954;
 }
