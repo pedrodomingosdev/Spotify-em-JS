@@ -659,6 +659,10 @@ body {
         width: 100%;
     }
 
+    .nav-buttons {
+        display: none;
+    }
+
     .carrossel-vertical {
         display: flex;
         flex-direction: row;
@@ -728,8 +732,45 @@ body {
         height: 40px;
     }
 
-    #likeSongsBtn.liked {
-        filter: invert(52%) sepia(92%) saturate(453%) hue-rotate(90deg) brightness(92%) contrast(92%);
+    #likeSongsBtn {
+        display: none;
     }
+
+    .playlist-selected {
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: white;
+    }
+
+    .play-playlist {
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .song-list-headers {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        border-bottom: 1px solid #ccc;
+        transition: background 0.2s ease;
+        cursor: pointer;
+        color: #888;
+        font-size: 14px;
+    }
+
+    .song-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        border-radius: 4px;
+        transition: background 0.2s ease;
+        cursor: pointer;
+    }
+
 
 }
