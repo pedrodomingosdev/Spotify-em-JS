@@ -9,7 +9,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100vh;
     width: 200px;
     background-color: #111;
     padding-top: 13px;
@@ -588,7 +588,6 @@ body {
 /* MOBILE */
 @media (max-width: 768px) {
 
-    /* Inicialmente esconde o menu fora da tela */
     #menu {
         position: fixed;
         top: 0;
@@ -602,22 +601,26 @@ body {
     }
 
     .carrosel {
-        padding-left: 20px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* 2 colunas fixas */
+        gap: 10px;
+        padding-left: 5px;
+    }
+
+    #menu.show {
+        transform: translateX(0);
     }
 
     .mix-foru {
-        width: 165px;
-        height: 45px;
-        padding: 0px 0px 0px 0px;
+        width: 100%;
+        max-width: 100%;
+        height: 55px;
+        padding: 0 0 0 5px;
         background-color: #555454;
         display: flex;
         border-radius: 5px;
         flex-direction: row;
         align-items: center;
-        gap: 15px;
     }
 
     .album {
@@ -626,6 +629,7 @@ body {
         background-color: var(--cor-fundo);
         flex-shrink: 0;
     }
+
 
     .menu-bar {
         display: flex;
@@ -639,8 +643,10 @@ body {
         padding: 15px 0px 0px 12px;
     }
 
-    /* Quando aberto, o menu aparece deslizando */
-    #menu.show {
-        transform: translateX(0);
+
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
     }
 }

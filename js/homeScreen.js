@@ -19,6 +19,8 @@ const cores = [
   "#228B22", "#006400", "#013220"
 ];
 
+const menu = document.getElementById("menu");
+const toggleButton = document.getElementById("menu-toggle");
 
 
 function loadHomeScreen() {
@@ -99,21 +101,27 @@ document.addEventListener('click', function (event) {
   }
 });
 
-const menuToggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('menu');
+function toggleMenu() {
+  const isOpen = menu.classList.toggle("show");
 
-menuToggle.addEventListener('click', function(event) {
-  event.stopPropagation();  // Para não deixar o clique "subir" para o body
-  menu.classList.toggle('show');  // Aparece / some o menu
+  if (isOpen) {
+    document.body.classList.add("menu-open");
+  } else {
+    document.body.classList.remove("menu-open");
+  }
+}
+
+toggleButton.addEventListener("click", function (event) {
+  event.stopPropagation(); 
+  toggleMenu();
 });
 
-// Fecha o menu se clicar fora dele
-document.body.addEventListener('click', function() {
-  menu.classList.remove('show');
+document.body.addEventListener("click", function () {
+  menu.classList.remove("show");
+  document.body.classList.remove("menu-open");
 });
 
-// Para evitar que clique dentro do menu feche ele
-menu.addEventListener('click', function(event) {
+menu.addEventListener("click", function (event) {
   event.stopPropagation();
 });
 
